@@ -38,15 +38,19 @@ public class GatoSimple implements Comparable<GatoSimple> {
         }
     }
 
-    // Método pelear
+ // Método pelear
     public void pelear(GatoSimple gatoContrincante) {
+        System.out.println("Sexo del gato contrincante: " + gatoContrincante.getSexo()); // Depuración
+
         if (this.sexo.equalsIgnoreCase("hembra")) {
             System.out.println("No me gusta pelear");
         } else if (this.sexo.equalsIgnoreCase("macho")) {
             if (gatoContrincante.getSexo().equalsIgnoreCase("hembra")) {
                 System.out.println("No peleo contra gatitas");
-            } else {
+            } else if (gatoContrincante.getSexo().equalsIgnoreCase("macho")) {
                 System.out.println("¡Ven aquí que te vas a enterar!");
+            } else {
+                System.out.println("El contrincante tiene un sexo no identificado.");
             }
         }
     }
